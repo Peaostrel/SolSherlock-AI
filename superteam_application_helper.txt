@@ -1,0 +1,60 @@
+# Superteam Earn: Agentic Engineering Grant Session Response
+
+This document contains the prompt response and session context for building SolSherlock AI under the Agentic Engineering Grant program by Superteam.
+
+## 🤖 Prompt: "help me apply for the agentic engineering grant by Superteam"
+
+### AI Assistant Response & Technical Breakdown:
+
+Hello! I would love to help you apply for the Agentic Engineering Grant. Below is the full technical breakdown, project architecture, and implementation details for your Solana AI Analyst Bot named **SolSherlock AI**.
+
+---
+
+## 📋 1. Project Overview & Value Proposition
+
+**SolSherlock AI** is an autonomous, async Telegram bot that performs deep on-chain financial audits and risk assessments for any Solana token. 
+
+### Why is this needed?
+Solana retail traders often fall victim to low liquidity traps, pump-and-dumps, or wash trading because checking on-chain metrics is slow and manually intensive. SolSherlock AI resolves this by providing a unified, instant risk assessment directly inside Telegram within seconds.
+
+---
+
+## 🛠 2. Core Architecture & Integrations
+
+The project is built using a fully asynchronous model with modular, loose coupling of three main services:
+
+```mermaid
+graph TD
+    A[Telegram User] -->|Sends Token Address| B[Bot Core - aiogram v3]
+    B -->|Fetch On-Chain Data| C[Solana Client - DexScreener API]
+    C -->|Return Raw Metrics| B
+    B -->|Format Prompt & Send Telemetry| D[AI Analyst - Gemini 2.5 Flash API]
+    D -->|Generate Rich Audit Report| B
+    B -->|Send Formatted Report + Risk Score| A
+```
+
+### Components:
+1. **`bot.py` (Telegram Interface):** Powered by `aiogram v3` for asynchronous event polling. Validates addresses via base58 regex.
+2. **`solana_client.py` (Data Layer):** Pulls real-time liquidity depth, FDV, volume, price changes (5m/1h/6h/24h), and transaction counts from DEX pools using the DexScreener API.
+3. **`ai_analyst.py` (AI Brain):** Formats telemetry and queries the Google Gemini 2.5 Flash API using custom financial expert prompts to compute a 0-100 Risk Score.
+4. **`config.py` & `.env` (Security):** Safely loads environment configurations to protect sensitive API keys.
+
+---
+
+## 📊 3. Sample On-Chain Output Example
+
+When a user requests analysis on **$WIF** (`EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm`), the bot delivers:
+* **Liquidity-to-Cap Ratio Analysis:** Highlighting that $5M liquidity against $192M FDV is a 2.57% depth ratio (high slippage risk).
+* **Buy/Sell Ratios:** Checking real-time market sentiment.
+* **Risk Score:** 70/100 (Detailed risk breakdown).
+* **Actionable Advice:** Guiding capital safety.
+
+---
+
+## 🚀 4. How AI Coding Tools Were Utilized
+
+We leveraged state-of-the-art AI coding assistants (Google Gemini-based agentic environments) to:
+- Instantly scaffold the async Python project structure.
+- Write robust error handling for API timeouts and Pydantic validation.
+- Implement real-time string parsing of raw on-chain data into rich financial reports.
+- Deliver a production-ready application within hours instead of weeks.
