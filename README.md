@@ -2,7 +2,7 @@
 
 An autonomous AI-powered assistant built for the **Solana Ecosystem** that provides instant, deep on-chain financial audits and risk assessments for any Solana token. 
 
-Built entirely with Python, leveraging real-time DEX pool data from **DexScreener API** and advanced intelligence from **Google Gemini 1.5 Flash API**.
+Built entirely with Python, leveraging real-time DEX pool data from **DexScreener API** and advanced intelligence from **Google Gemini 2.5 Flash API**.
 
 > [!NOTE]
 > Designed and submitted for the **Superteam Agentic Engineering Grants**. Zero capital required, 100% open-source!
@@ -24,7 +24,7 @@ Built entirely with Python, leveraging real-time DEX pool data from **DexScreene
 * **Framework:** [Aiogram v3](https://github.com/aiogram/aiogram) (Modern, fully asynchronous Telegram Bot framework)
 * **HTTP Client:** [Httpx](https://github.com/encode/httpx) (Fast async requests)
 * **Solana Telemetry:** DexScreener Public API
-* **Intelligence:** Google Gemini 1.5 Flash (via direct high-performance HTTP endpoints)
+* **Intelligence:** Google Gemini 2.5 Flash (via direct high-performance HTTP endpoints)
 
 ---
 

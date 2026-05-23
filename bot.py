@@ -65,7 +65,7 @@ async def help_handler(message: Message):
         "   _Пример: EKpQGSJtjMFqKZ9KQGWjzD4Ww75ypm1PkxWALJmqpump (WIF)_\n"
         "2. Просто отправь этот адрес мне в чат.\n"
         "3. Дождись завершения анализа (обычно это занимает около 5-10 секунд).\n\n"
-        "💡 Я использую в реальном времени ончейн-данные с **DexScreener API** и аналитику на базе **Gemini 1.5 Flash**."
+        "💡 Я использую в реальном времени ончейн-данные с **DexScreener API** и аналитику на базе **Gemini 2.5 Flash**."
     )
     await message.answer(help_text)
 
